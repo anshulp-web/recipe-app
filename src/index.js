@@ -12,10 +12,7 @@ app.use(express.json());
 app.use(cors());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(express.static(path.join(__dirname, '../client/build')));
-app.use('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+
 // User route prefix
 app.use('/auth', userRouter);
 //Recipe route prefix
